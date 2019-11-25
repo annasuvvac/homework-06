@@ -16,4 +16,4 @@ The results show the current weather conditions for the city including a color c
 
 There is also a button to clear the search history.
 
-<img src="images/weather.PNG">
+<img src="images/weather1.png">
