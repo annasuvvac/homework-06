@@ -1,0 +1,153 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    margin: 0;    
+    color: #777777;
+    height: 100vh;    
+}
+.row{
+    margin: 0;   
+    
+}
+#header{
+    padding:15px;
+    color: white; 
+    position:fixed;
+    top:0;
+    width:100%;  
+    z-index:10; 
+}
+h1,h2,h3,h4{
+  margin:0;  
+}
+.wrapper{
+    align-items: stretch;
+    
+}
+#inputGroup{
+    display:flex;
+    justify-content:stretch;
+    align-content: stretch;
+    flex-wrap: wrap-reverse;
+}
+#searchPanel{    
+    padding: 10px 10px 0 10px;
+    width: 320px;
+    margin-bottom:0;
+    background-color: rgb(242, 242, 242);      
+    height: 100%;   
+    position: fixed;
+    z-index: 1;    
+    overflow-x: hidden;    
+    padding-top: 20px;
+    top:78px;
+}
+
+#inputGroup > *{    
+    margin-bottom: 5px;
+}
+input{
+    padding-left: 10px;
+}
+
+#searches button:not(:first-child){
+    border-top:unset;
+}
+#searches button:first-child{
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+#searches button:last-child{
+    border-bottom-left-radius:4px;
+    border-bottom-right-radius:4px;
+}
+.btn{
+    color: #777777; 
+}
+.btnCitySearch{
+    width:100%;
+    display:block;
+    font-size: 1.1em;
+    border:1px solid #777777;
+    border-radius:0;
+    text-align:left;
+    background-color: white;
+}
+#searchInput{
+    flex:1;  
+    border-radius: 4px;    
+    border: 1px solid;
+}
+#searches{
+    /*overflow-y: scroll;*/
+}
+.searchBtn{
+    margin-left: 5px;
+    background-color: rgb(50, 99, 173);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+}
+.clearBtn{
+    margin-left: 5px;
+    background-color: rgb(189, 63, 63);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+#mainContent{
+    margin-left:320px;
+    margin-right:0;
+    padding-right:0;
+    top:78px;
+}
+#currentWeather{
+    margin:10px 0 10px 10px;
+    padding: 20px 0 20px 20px;
+    border: 1px solid #777777;
+    border-right: unset;
+    border-radius: 5px 0 0 5px;
+}
+.currentWeatherImg{
+    height:75px; 
+}
+
+#UVIndex{
+    display: inline;
+    padding:5px;
+    border: 1px solid;
+    border-radius: 4px; 
+
+}
+#forecast > h3{
+    padding-left: 10px;
+}
+#dayCardContainer{    
+    justify-content: center;
+    flex-wrap:wrap;
+    padding-right: 15px;
+    align-content: stretch;
+   
+}
+.dayCard{
+    padding: 10px;
+    background-color: lightblue;
+    margin: 10px;
+    border-radius:5px;
+    
+}
+.dayCard > *{
+    margin-bottom:10px; 
+    display: block;
+}
+.dayCard > img{
+    margin:-10px 0 0 0;
+}
+@media (max-width:550px){
+    #searchPanel{
+        width:230px;
+    }
+    #mainContent{
+        margin-left:230px;
+    }
+}
