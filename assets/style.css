@@ -17,19 +17,22 @@ body{
     width:100%;  
     z-index:10; 
 }
-h1,h2,h3,h4{
-  margin:0;  
-}
-.wrapper{
-    align-items: stretch;
-    
-}
 #inputGroup{
     display:flex;
     justify-content:stretch;
     align-content: stretch;
     flex-wrap: wrap-reverse;
 }
+ 
+    h1,h2,h3,h4{
+  margin:0;  
+}
+.wrapper{
+    align-items: stretch;
+    
+}
+
+
 #searchPanel{    
     padding: 10px 10px 0 10px;
     width: 320px;
@@ -78,9 +81,7 @@ input{
     border-radius: 4px;    
     border: 1px solid;
 }
-#searches{
-    /*overflow-y: scroll;*/
-}
+
 .searchBtn{
     margin-left: 5px;
     background-color: rgb(50, 99, 173);

@@ -7,30 +7,27 @@ const currentWeatherDiv = $("#currentWeather");
 const forecastDiv = $("#forecast");
 const clearBtn = $("#clear");
 var storedSearches = getStoredSearches();
-//variable used to store and determine if the city needs to be added to the search history
 var addedCity = newCity();
-//unit variables for future development of switching between unit systems.
+
 const metricUnits = {deg:"C", speed:"KPH"};
 const impUnits = {deg:"F",speed:"MPH"};
 var units = metricUnits;
 
-
 function init(){
 
-    //enable tooltips
-    $(function () {
+$(function () {
         $('[data-toggle="tooltip"]').tooltip()
     });
     
 
-    buildSearchHistory();
+buildSearchHistory();
 
     if(storedSearches != null){
         getWeather(storedSearches[0]);
     }
 
     searchInput.on("keyup", function (event){
-         // "13" represents the enter key
+        
         if (event.key === "Enter") {
             searchButtonClicked();
         }
@@ -42,9 +39,9 @@ function init(){
 
 function buildSearchHistory(){
     
-    searchesDiv.empty();
+searchesDiv.empty();
     
-    if(storedSearches != null){
+if(storedSearches != null){
         storedSearches.forEach(element => {
             searchesDiv.append(
                 $("<button>")
@@ -63,14 +60,14 @@ function searchButtonClicked(){
     let cityVal = searchInput.val().trim();
     let city = newCity(cityVal, null);       
     getWeather(city);
-    //clear the value once the search is activated
+   
     searchInput.val("");        
 }
 
 function getWeather(city){
-    addedCity = city; 
-    let queryURLCurrent = "";
-    let queryURLForecast = "";
+       addedCity = city; 
+       let queryURLCurrent = "";
+       let queryURLForecast = "";
 
     if(city.country == null){
         queryURLCurrent = "https://api.openweathermap.org/data/2.5/weather?q="+city.city+"&units=metric&appid="+APIKey;
@@ -85,7 +82,7 @@ function getWeather(city){
 }
 
 function buildCurrentWeather(data){
-    //console.log(data);
+    
     if(data != null){
         console.log(units,metricUnits,data.wind.speed);
         currentWeatherDiv.empty();
@@ -131,7 +128,7 @@ function buildUV(data){
         let textColor = null;
         let borderColor = null;
         
-        //determine severity of UV Index for color coding
+        
         if(UVIndex < 2){
             UVbg = "green";
             textColor = "white";
@@ -188,11 +185,11 @@ function buildForecastWeather(data){
         alert("Something went wrong getting forecast data, please try again");
     }
 }
-//for now arbitrarily starts at the index 5/40 of returned results as it is in 3 hour intervals
+
 function parseDailyData(data){
 
     let dailyData = [];
-    //increments by 8 due to 8 * 3 hours = 1 day
+    
     for(var i = 5; i < data.list.length; i += 8){
         
         let dataList = data.list[i];
@@ -225,7 +222,7 @@ function buildForecastCard(day){
 }
 
 function addNewSearch(city){
-    //console.log(city, storedSearches);
+  
     if(storedSearches == null){
         storedSearches = [];
     }
@@ -246,7 +243,7 @@ function clearSearches(){
 //get started
 init();
 
-//helper functions
+
 function getDayOfWeek(date){
    return moment.unix(parseInt(date)).format('dddd');
 }
