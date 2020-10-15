@@ -4,7 +4,7 @@
 # Description
 This is a small web app that uses the OpenWeather API to perform simple weather condition searches for cities showing the current conditions as well as the 5 day forcast. HTML and CSS used to structure and style the page. Additional resources used: Jquery, moment.js, Bootstrap, Popper.js and FontAwesome..
 
-Deployment URL: https://ana199816.github.io/homework-06/
+Deployment URL: https://annasuvvac.github.io/homework-06/
 
 
 Usage
